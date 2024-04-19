@@ -13,7 +13,7 @@ async function monitorWebsite(){
     const newItemExits = await page.evaluate(() => {
       // Check if specific element representing a new item exists
       const newItemElement = document.querySelector('.product-group');
-      return newItemElement;
+      return !!newItemElement;
     });
 
     if (newItemExists){
