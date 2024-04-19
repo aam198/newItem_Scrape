@@ -10,7 +10,7 @@ async function monitorWebsite(){
 
   // checks for updates
   async function checkForUpdates() {
-    const newItemExits = await page.evaluate(() => {
+    const newItemExists = await page.evaluate(() => {
       // Check if specific element representing a new item exists
       const newItemElement = document.querySelector('.product-group');
       return !!newItemElement;
