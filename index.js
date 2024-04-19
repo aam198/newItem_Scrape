@@ -14,7 +14,23 @@ async function monitorWebsite(){
       // Check if specific element representing a new item exists
       const newItemElement = document.querySelector('.product-group');
       return newItemElement;
-    })
+    });
+
+    if (newItemExists){
+      console.log('New Item detected!');
+      // Update to send notification
+    }
   }
-// If browser is closed out
-  await browser.close();
+
+  // Checks every minute
+  setInterval(checkForUpdates, 6000);
+
+  // Stops monitoring after an hour
+
+  setTimeout(() => {
+    browser.close();
+  }, 3600000);
+
+}
+
+monitorWebsite();
